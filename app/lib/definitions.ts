@@ -40,6 +40,7 @@ export type LatestInvoice = {
 };
 
 // The database returns a number for amount, but we later format it to a string with the formatCurrency function
+// The LatestInvoiceRaw type is defined using the Omit utility type, which is a built-in TypeScript utility type that allows you to create a new type by excluding certain properties from an existing type. In this case, the Omit utility type is used to exclude the amount property from the LatestInvoice type.
 export type LatestInvoiceRaw = Omit<LatestInvoice, 'amount'> & {
   amount: number;
 };
